@@ -1,0 +1,14 @@
+:root {
+    --main-color: #fff;
+    --primary-color: #f79256;
+    --secondary-color: #279af1;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+
+}
+svg {
+    width: 100px;
+}
