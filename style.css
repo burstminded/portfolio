@@ -18,7 +18,6 @@ header {
     width: 100%;
     box-sizing: border-box;
     padding: 10px 20px;
-    height: 100px;
     align-items: center;
     background-color: var(--primary-color);
 }
@@ -50,6 +49,7 @@ main {
     flex-flow: column nowrap;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
 }
 
 main h1 {
@@ -62,9 +62,9 @@ main h1 {
     overflow: hidden;
     justify-content: space-between;
     align-items: center;
-    gap: 3%;
-    padding: 5% 10%;
-    width: 70%;
+    gap: 2%;
+    padding: 3% 8%;
+    width: 75%;
 }
 
 #intro ul {
@@ -101,24 +101,221 @@ main h1 {
     position: relative;
 }
 
+#gallery .slider button {
+    font-size: 3em;
+    font-weight: bold;
+    position: relative;
+    z-index: 6;
+    border: none;
+    background: transparent;
+}
+
+#gallery .slider .left-control {
+    right: 15px;
+}
+
+#gallery .slider .right-control {
+    left: 30px;
+}
+
 #gallery .slider .slider-piece{
-    background-color: var(--primary-color);
     position: absolute;
-    width: 80%;
-    height: 500px;
+    width: 90%;
+    aspect-ratio: 16 / 9;
     margin-left: auto;
     margin-right: auto;
-    border: 1px solid #000;
+    transition: all .5s ease-in;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 #gallery .slider .slider-piece:not(.current) {
-    transform: translateX(50px) translateY(50px);
-    opacity: 0.5;
-    box-shadow: 5px 5px 2px var(--primary-color);
+    transform: translateX(25px) translateY(25px);
 }
 
 #gallery .slider .slider-piece.current {
-    background-color: var(--secondary-color);
     position: relative;
     z-index: 4;
+}
+
+#gallery .slider .slider-piece p {
+    font-size: 1.5em;
+    color: var(--main-color);
+    opacity: 0;
+}
+
+#gallery .slider .slider-piece.current:hover p {
+    opacity: 1;
+    position: relative;
+    z-index: 5;
+}
+
+#gallery .slider .slider-piece::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0;
+}
+
+#gallery .slider .slider-piece:not(.current)::after{
+    opacity: 0.3;
+}
+
+#gallery .slider .slider-piece.current:hover::after {
+    opacity: 0.7;
+}
+
+#barcelona {
+    background-image: url("img/barca.jpg");
+}
+#santo {
+    background-image: url("img/san-dom.jpg");
+}
+
+#koln {
+    background-image: url("img/koln.jpg");
+}
+
+#prague {
+    background-image: url("img/prague.jpg");
+}
+
+#kyiv {
+    background-image: url("img/kyiv.jpg");
+}
+
+
+/*END OF GALLERY*/
+
+
+#contact {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+#contact h2 {
+    font-size: 2em;
+}
+
+#contact input {
+    font-size: 1.75em;
+    border: none;
+    border-bottom: 2px solid var(--secondary-color);
+    padding: 5px 10px;
+    box-sizing: border-box;
+}
+
+#contact textarea {
+    font-size: 1.5em;
+    border: 2px solid var(--primary-color);
+    border-radius: 10%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+
+/*END OF CONTACT PAGE*/
+
+
+footer {
+    width: 100%;
+    padding: 1% 5%;
+    box-sizing: border-box;
+    background-color: var(--secondary-color);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer h3 {
+    color: var(--main-color);
+    font-size: 1.5em;
+}
+
+footer p a {
+    font-size: 1.25em;
+    text-decoration: none;
+    color: var(--main-color);
+
+}
+
+
+/*END OF FOOTER*/
+
+
+/*MEDIA QUERIES*/
+
+
+@media screen and (max-width: 768px) {
+
+    header ul {
+        justify-content: space-between;
+    }
+
+    header ul li {
+        font-size: 1.5em;
+    }
+
+    #intro {
+        flex-flow: column nowrap;
+    }
+
+    #intro ul {
+        max-width: 80%;
+    }
+
+    #intro img {
+        max-width: 80%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+
+    body {
+        font-size: 14px;
+    }
+
+    header {
+        padding: 2px 5px;
+    }
+
+    header ul {
+        gap: 2%;
+        width: 90%;
+        padding-left: 0;
+    }
+
+    main {
+        gap: 5px;
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    #intro {
+        flex-flow: column-reverse nowrap;
+        padding: 10px;
+        width: 95%;
+    }
+
+    #intro ul{
+        max-width: 100%;
+    }
+
+    #intro img {
+        max-width: 95%;
+    }
+
+    #gallery .slider .slider-piece:not(.current) {
+        transform: translateX(10px) translateY(10px);
+    }
 }

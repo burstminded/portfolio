@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vanessa Green</title>
     <link rel="stylesheet" href="style.css">
-    <script src="index.js"></script>
+
 </head>
 
 <body>
@@ -31,22 +31,38 @@
                 </li>
                 
             </ul>
-            <img src="profile-photo.jpg" alt="My profile photo!">
+            <img src="img/profile-photo.jpg" alt="My profile photo!">
         </section>
         <section id="gallery">
             <h2>Some Pieces of My Work</h2>
             <div class="slider">
-                <div class="slider-piece current"></div>
-                <div class="slider-piece"></div>
-                <div class="slider-piece"></div>
-                <div class="slider-piece"></div>
-                <div class="slider-piece"></div>
+                <button class="left-control" onclick="previousSlide()">&#8249;</button>
+                <div id="barcelona" class="slider-piece current"><p>Barcelona, Spain</p></div>
+                <div id="santo" class="slider-piece"><p>Santo Domingo, Dominican Republic</p></div>
+                <div id="koln" class="slider-piece"><p>Cologne, Germany</p></div>
+                <div id="prague" class="slider-piece"><p>Prague, Czech Republic</p></div>
+                <div id="kyiv" class="slider-piece"><p>Kyiv, Ukraine</p></div>
+                <button class="right-control" onclick="nextSlide()">&#8250;</button>
             </div>
         </section>
-        <section></section>
-        <section></section>
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <label for="email">Email:</label>
+            <input id="email" type="email" placeholder="Input Your Email">
+            <label for="name">Name:</label>
+            <input id="name" type="text" placeholder="Type Your Name">
+            <label for="comment">Your comment</label>
+            <textarea id="comment" name="comment"  cols="30" rows="10">What would You like to tell me?
+            </textarea>
+        </section>
     </main>
-    <footer></footer>
+    <footer>
+        <h3>My Links</h3>
+        <p><a href="#">Instagram</a></p>
+        <p><a href="#">Facebook</a></p>
+        <p><a href="#">Pinterest</a></p>
+    </footer>
+    <script src="index.js"></script>
 </body>
 
 </html>
